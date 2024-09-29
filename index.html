@@ -10,27 +10,40 @@
     <nav class="nav">
       <p>Mansion</p>
     </nav>
-    <main class="main">
-      <div class="main_box">
-        <h3>To Do</h3>
-        <ul class="box_lists">
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-        </ul>
-        <div class="add_card">+ 카드 추가하기</div>
-      </div>
 
-      <div class="main_box">
-        <h3>To Do</h3>
-        <ul class="box_lists">
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-          <li class="card">css 공부하기</li>
-        </ul>
-        <div class="add_card">+ 카드 추가하기</div>
+    <main class="main">
+      <div class="main_lists">
+        <div class="main_box">
+          <h3>To Do</h3>
+          <ul class="box_lists">
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+          </ul>
+          <div class="add_card">+ 카드 추가하기</div>
+        </div>
+
+        <div class="main_box">
+          <h3>In Progress</h3>
+          <ul class="box_lists">
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+          </ul>
+          <div class="add_card">+ 카드 추가하기</div>
+        </div>
+
+        <div class="main_box">
+          <h3>Completed</h3>
+          <ul class="box_lists">
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+            <li class="card">css 공부하기</li>
+          </ul>
+          <div class="add_card">+ 카드 추가하기</div>
+        </div>
       </div>
 
       <!-- 리스트 추가 -->
@@ -41,6 +54,7 @@
             type="text"
             placeholder="리스트 제목을 입력해주세요"
             id="add_list_title"
+            required
           />
           <button>만들기</button>
         </div>
@@ -54,6 +68,7 @@
             type="text"
             placeholder="카드 제목을 입력해주세요"
             id="add_card_title"
+            required
           />
           <button>추가하기</button>
         </div>

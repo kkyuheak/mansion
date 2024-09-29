@@ -46,8 +46,19 @@ body {
   position: relative;
 }
 
+/* main_lists */
+.main_lists {
+  width: 100%;
+  /* overflow-x: scroll; */
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  background-color: paleturquoise;
+}
+
 /* main-box */
 .main_box {
+  /* min-width: 300px; */
   width: 330px;
   max-height: calc(100vh - 100px);
   background-color: #d2d2d2;
