@@ -63,17 +63,22 @@ getBox.addEventListener("submit", (e) => {
       "beforeend",
       `<div class="main_box">
           <h3>${getListTitle.value}</h3>
+          <ul class="box_lists"></ul>
           <div class="add_card">+ 카드 추가하기</div>
         </div>`
     );
-    const addArr = [
-      ...getData,
-      {
-        title: `${getListTitle.value}`,
-        cards: [],
-      },
-    ];
-    localStorage.setItem("data", JSON.stringify(addArr));
+    data.push({
+      title: `${getListTitle.value}`,
+      cards: [],
+    });
+    localStorage.setItem("data", JSON.stringify(data));
+
+    // data.push({
+    //   title: `${getListTitle.value}`,
+    //   cards: [],
+    // });
+
+    console.log(data);
   }
 
   getListTitle.value = "";
@@ -92,13 +97,27 @@ const getCardTitle = document.getElementById("add_card_title");
 
 let cardIndex = 0;
 
-getAddCardBtn.forEach((item, index) => {
-  item.addEventListener("click", (e) => {
+// getAddCardBtn.forEach((item, index) => {
+//   item.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     getCardBox.classList.toggle("open_add_box");
+//     console.log(index);
+//     cardIndex = index;
+//   });
+// });
+
+// 이벤트 위임
+getMainLists.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("add_card")) {
     e.stopPropagation();
     getCardBox.classList.toggle("open_add_box");
-    console.log(index);
-    cardIndex = index;
-  });
+
+    cardIndex = Array.from(getMainLists.children).indexOf(
+      e.target.closest(".main_box")
+    );
+    console.log(cardIndex);
+  }
 });
 
 getCardBoxItem.addEventListener("click", (e) => {
