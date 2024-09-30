@@ -53,6 +53,7 @@ getBoxItem.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
+// 리스트 제목 submit 함수
 getBox.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(getListTitle.value);
@@ -106,10 +107,15 @@ getCardBoxItem.addEventListener("click", (e) => {
 
 getCardBox.addEventListener("submit", (e) => {
   e.preventDefault();
-  getMainBox[cardIndex].insertAdjacentHTML(
+  const lists = getMainBox[cardIndex].querySelector(".box_lists");
+
+  lists.insertAdjacentHTML(
     "beforeend",
-    `<li>${getCardTitle.value}</li>`
+    `<li class="card">${getCardTitle.value}</li>`
   );
+
+  getCardTitle.value = "";
+  getCardBox.classList.remove("open_add_box");
 });
 
 window.addEventListener("click", () => {
