@@ -126,7 +126,14 @@ getCardBoxItem.addEventListener("click", (e) => {
 
 getCardBox.addEventListener("submit", (e) => {
   e.preventDefault();
-  const lists = getMainBox[cardIndex].querySelector(".box_lists");
+
+  // 동적으로 생성된 리스트에 카드 생성불가
+  // const lists = getMainBox[cardIndex].querySelector(".box_lists");
+
+  // 수정
+  const lists = Array.from(getMainLists.children)[cardIndex].querySelector(
+    ".box_lists"
+  );
 
   lists.insertAdjacentHTML(
     "beforeend",
